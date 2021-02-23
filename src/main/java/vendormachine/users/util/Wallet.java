@@ -47,7 +47,7 @@ public class Wallet {
         return this.storedCredit;
     }
 
-    public String getBrand(String band) {
+    public String getBrand() {
         return this.brand;
     }
 
@@ -61,4 +61,11 @@ public class Wallet {
     public void setBrand(String brand){
         this.brand = brand;
     }
+
+	@Override
+	public String toString() {
+		return "Wallet [brand=" + brand + ", storedCredit=" + storedCredit + "]";
+	}
+    
+    
 }
