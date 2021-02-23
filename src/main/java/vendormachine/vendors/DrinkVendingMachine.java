@@ -1,12 +1,11 @@
 package vendormachine.vendors;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import vendormachine.users.Person;
 import vendormachine.vendors.enums.BRANDS;
 import vendormachine.vendors.item.Snack;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 public class DrinkVendingMachine {
 
@@ -41,7 +40,7 @@ public class DrinkVendingMachine {
 
     // This is how we'll select our "snack" from the array
     public Snack selectDrink(int arrayPosition){
-        if(arrayPosition >=  drinkList.size() || arrayPosition > 0) {
+        if(arrayPosition <  drinkList.size() || arrayPosition >= 0) {
             Snack selection = drinkList.get(arrayPosition);
 
             if(this.availableCredit < selection.cost()){
@@ -73,9 +72,32 @@ public class DrinkVendingMachine {
     //===  'get'ors
     //===============================
 
+    public BRANDS getBrandName() {
+		return brandName;
+	}
+
+	public float getAvailableCredit() {
+		return availableCredit;
+	}
+
+	public ArrayList<Snack> getDrinkList() {
+		return drinkList;
+	}
 
     //===============================
     //===  'set'ors
     //===============================
 
+	public void setBrandName(BRANDS brandName) {
+		this.brandName = brandName;
+	}
+
+	public void setAvailableCredit(float availableCredit) {
+		this.availableCredit = availableCredit;
+	}
+
+	public void setDrinkList(ArrayList<Snack> drinkList) {
+		this.drinkList = drinkList;
+	}
+	
 }
